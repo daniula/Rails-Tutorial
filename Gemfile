@@ -6,10 +6,19 @@ gem 'rails', '3.2.2'
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
 
-group :development, :test do
+group :development do
     gem 'sqlite3', '1.3.5'
     gem 'rspec-rails', '2.8.1'
+    gem 'guard-rspec', '0.6.0'
+end
+
+group :test do
+    gem 'rspec-rails', '2.8.1'
     gem 'capybara', '1.1.2'
+    gem 'rb-fsevent', '0.9.0', :require => false
+    gem 'growl', '1.0.3'
+    gem 'guard-spork', '0.5.2'
+    gem 'spork', '0.9.0'
 end
 
 

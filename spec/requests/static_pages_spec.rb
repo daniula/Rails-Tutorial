@@ -43,4 +43,18 @@ describe 'Static pages' do
     it_should_behave_like 'all static pages'
   end
 
+
+  it 'should have the right links on the layout' do
+    visit root_path
+    click_link 'About'
+    should have_selector 'title', text: full_title('About')
+    click_link 'Help'
+    should have_selector 'title', text: full_title('Help')
+    click_link 'Contact'
+    should have_selector 'title', text: full_title('Contact')
+    click_link 'Home'
+    should have_selector 'title', text: full_title('')
+    click_link 'Sign up now!'
+    should have_selector 'title', text: full_title('Sign up')
+  end
 end
